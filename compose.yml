@@ -1,0 +1,13 @@
+services:
+  sdlc-orchestration-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sdlc-orchestration-engine:v2.0.0
+    container_name: sdlc_engine_container
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - ENVIRONMENT=local_sandbox
+    security_opt:
+      - no-new-privileges:true

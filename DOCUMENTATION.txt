@@ -1,0 +1,17 @@
+CONTEXT-AWARE SDLC ORCHESTRATION ENGINE MANUAL
+
+[1] FILE INTERACTIVITY & ARCHITECTURE
+- src/schemas.py: Declares structured immutable models and the PipelineStatus lifecycle states.
+- src/governance.py: Dynamically reads the context metadata and assesses the overall risk scale.
+- src/engine.py: Controls transitions between PipelineStatus configurations. Intercepts builds if tokens are absent.
+- src/payroll.py: Business logic execution subsystem enforcing stateful row-locks to catch concurrency bugs.
+
+[2] MULTI-STAGE LOGGING MECHANISM
+The pipeline includes localized structured logging. Every stage outputs precise [STAGE: NAME] milestones 
+enabling audit teams to trace how mutations took place and when human intervention gates caught builds.
+
+[3] SCENARIO MATRIX WORKFLOWS
+- Scenario A (URL Shortener): Mutates configuration token lengths down from 6 to 4 chars for SMS network carrying optimization.
+- Scenario B (Payroll Job): Halts validation at Phase 0 and Phase 2.5 gates. Runs row-locks against duplicate payout vectors.
+- Scenario C (Java 27 Modernization Upgrade): Identifies high ecosystem blast radius for Java 27 (released Sept 2026) 
+  and enforces explicit Enterprise Architect signature overrides to rewrite the deployment manifests.

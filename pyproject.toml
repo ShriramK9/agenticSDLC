@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-aware-sdlc-engine"
+version = "2.0.0"
+description = "Context-driven stateful engine with dynamic human validation guards."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pytest>=7.4.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
